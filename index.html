@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Scrolling Effect Website</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h2 class="logo">Flyteer</h2>
+        <nav class="navigation">
+            <a href="#" class="active">Stays</a>
+            <a href="#">Flight</a>
+            <a href="#">Taxis</a>
+            <a  onclick="signUp()" class="button">Register</a>
+            <a  onclick="signIn()" class="button">Sign in</a>
+        </nav>   
+        <div class="menu-toggle" onclick="toggleMenu()"></div>
+    </header>
+
+    <section class="parallax">
+        <img src="Images/hill1.png" id="hill1">
+        <img src="Images/hill2.png" id="hill2">
+        <img src="Images/hill3.png" id="hill3">
+        <img src="Images/hill4.png" id="hill4">
+        <img src="Images/hill5.png" id="hill5">
+        <img src="Images/tree.png" id="tree">
+        <img src="Images/leaf.png" id="leaf">
+        <img src="Images/plant.png" id="plant">
+        <img src="Images/airplane.png" id="airplane">
+        <h2 id="text">Let's make a trip!</h2>
+    </section>
+
+    <section class="sec">
+        <h2>Let's Book a Flight!</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore voluptatem sapiente rerum molestias, dele
+            ctus adipisci tempore ipsam omnis, molestiae hic consequuntur facere deserunt accusantium ex veritatis esse quam at. 
+            Fugiat recusandae aliquam, molestiae eum quasi aperiam, quas maiores enim consequuntur fuga, sunt nesciunt voluptates nemo cum corporis ad autem cupiditate vitae quae architecto deserunt provident.
+            Laborum aperiam omnis nemo, culpa praesentium nisi. Ex dolorem adipisci delectus doloremque, perferendis, laborum sit est porro officiis in totam facere necessitatibus vel ab neque? Velit cumque quia
+            repudiandae laudantium architecto quo inventore nam neque ducimus ipsa, aspernatur fugit quidem recusandae ea voluptates, id quam! Accusantium rem numquam doloremque nisi voluptas consequuntur repellendus
+            molestiae eveniet et asperiores nostrum hic sint ex temporibus itaque consequatur ea minima dolorem fugiat obcaecati, libero ratione neque! Voluptatem, blanditiis!
+            <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore voluptatem sapiente rerum molestias, dele
+            ctus adipisci tempore ipsam omnis, molestiae hic consequuntur facere deserunt accusantium ex veritatis esse quam at. 
+            Fugiat recusandae aliquam, molestiae eum quasi aperiam, quas maiores enim consequuntur fuga, sunt nesciunt voluptates nemo cum corporis ad autem cupiditate vitae quae architecto deserunt provident.
+            Laborum aperiam omnis nemo, culpa praesentium nisi. Ex dolorem adipisci delectus doloremque, perferendis, laborum sit est porro officiis in totam facere necessitatibus vel ab neque? Velit cumque quia
+            repudiandae laudantium architecto quo inventore nam neque ducimus ipsa, aspernatur fugit quidem recusandae ea voluptates, id quam! Accusantium rem numquam doloremque nisi voluptas consequuntur repellendus
+            molestiae eveniet et asperiores nostrum hic sint ex temporibus itaque consequatur ea minima dolorem fugiat obcaecati, libero ratione neque! Voluptatem, blanditiis!
+            <br><br>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolore voluptatem sapiente rerum molestias, dele
+            ctus adipisci tempore ipsam omnis, molestiae hic consequuntur facere deserunt accusantium ex veritatis esse quam at. 
+            Fugiat recusandae aliquam, molestiae eum quasi aperiam, quas maiores enim consequuntur fuga, sunt nesciunt voluptates nemo cum corporis ad autem cupiditate vitae quae architecto deserunt provident.
+            Laborum aperiam omnis nemo, culpa praesentium nisi. Ex dolorem adipisci delectus doloremque, perferendis, laborum sit est porro officiis in totam facere necessitatibus vel ab neque? Velit cumque quia
+            repudiandae laudantium architecto quo inventore nam neque ducimus ipsa, aspernatur fugit quidem recusandae ea voluptates, id quam! Accusantium rem numquam doloremque nisi voluptas consequuntur repellendus
+            molestiae eveniet et asperiores nostrum hic sint ex temporibus itaque consequatur ea minima dolorem fugiat obcaecati, libero ratione neque! Voluptatem, blanditiis!<br><br>
+        </p>
+    </section>
+    <script src="script.js" defer></script>
+    <script>
+        function toggleMenu() {
+            var navigation = document.querySelector('.navigation');
+            navigation.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
