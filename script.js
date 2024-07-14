@@ -19,3 +19,7 @@ window.addEventListener('scroll', () => {
     airplane.style.left = value * 2.5 + 'px';
 });
 });
+function toggleMenu() {
+    var navigation = document.querySelector('.navigation');
+    navigation.classList.toggle('active');
+}
