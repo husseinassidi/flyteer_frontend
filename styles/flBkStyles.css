@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E6FAF5;
+    color: #333;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background-color: #D6EADA;
+    border-radius: 5px;
+}
+
+.filter-section {
+    background-color: #B0EACD;
+    padding: 20px 0;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.filter-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-box input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 150px;
+}
+
+.filter-button {
+    background-color: #3DA490;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-button:hover {
+    background-color: #359B84;
+}
+
+.suggestions {
+    margin-top: 40px;
+}
+
+.suggestions h2 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.suggestion {
+    background-color: #7ED3B5;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.suggestion .details {
+    display: flex;
+    flex-direction: column;
+}
+
+.suggestion .time, .suggestion .duration, .suggestion .price, .suggestion .route {
+    margin-bottom: 10px;
+}
+
+.suggestion .route span {
+    margin: 0 5px;
+}
+
+.book-button {
+    background-color: #3DA490;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.book-button:hover {
+    background-color: #359B84;
+}
+
+footer {
+    background-color: #fff;
+    padding: 20px 0;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer-logo {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.footer-icons {
+    margin-bottom: 20px;
+}
+
+.footer-icons a {
+    margin: 0 10px;
+}
+
+.footer-links {
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.footer-copy {
+    font-size: 0.9em;
+    color: #777;
+}
