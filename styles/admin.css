@@ -3,23 +3,30 @@ body {
   margin: 0;
   display: flex;
   background-color: #f8f9fa;
+  min-height: 100vh;
 }
 
 .sidebar {
   background-color: #b3e5e1;
-  max-width: 250px;
+  width: 250px;
   padding: 20px;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   height: 100vh;
   display: flex;
   flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
 }
+
 .container {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 20px;
 }
+
 .sidebar h1 {
   font-size: 24px;
   color: #334a38;
@@ -28,6 +35,7 @@ body {
 .sidebar ul {
   list-style-type: none;
   padding: 0;
+  width: 100%;
 }
 
 .sidebar ul li a {
@@ -51,19 +59,23 @@ body {
 }
 
 .main-content {
-  padding: 40px;
-  flex-grow: 1;
+  padding: 20px;
+  margin-left: 270px; /* Adjust this value based on sidebar width and padding */
+  width: calc(100% - 270px);
+  box-sizing: border-box;
 }
 
 .main-content h2 {
   font-size: 28px;
   color: #334a38;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .main-content p {
   font-size: 18px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .main-content .main-btn {
@@ -74,9 +86,6 @@ body {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-.main-btn {
-  align-self: flex-end;
 }
 
 .main-content .main-btn:hover {
@@ -155,7 +164,8 @@ body {
   margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 50%;
+  width: 90%;
+  max-width: 500px;
   border-radius: 10px;
   animation: slideIn 0.5s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -254,9 +264,59 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
 .deletionModal {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
   align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .main-content table,
+  .main-content table th,
+  .main-content table td {
+    display: block;
+    width: 100%;
+  }
+
+  .main-content table th,
+  .main-content table td {
+    text-align: left;
+    padding: 10px;
+  }
+
+  .main-content table th {
+    background-color: #334a38;
+    color: white;
+  }
+
+  .main-content table tr {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .main-content table tr:nth-child(even) {
+    background-color: transparent;
+  }
+
+  .main-content table tr:hover {
+    background-color: transparent;
+  }
+
+  .action-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
 }
