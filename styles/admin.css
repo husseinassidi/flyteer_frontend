@@ -159,6 +159,13 @@ body {
   animation: fadeIn 0.5s;
 }
 
+.closeUpdate {
+  align-self: flex-end;
+}
+.closeUpdate:hover {
+  cursor: pointer;
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: 10% auto;
@@ -318,5 +325,11 @@ body {
   .action-btn {
     width: 100%;
     margin: 5px 0;
+  }
+  no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-self: center;
   }
 }

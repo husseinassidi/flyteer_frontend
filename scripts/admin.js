@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     "http://localhost/grpProject%232/flyteer_backend/api/taxi_company/create.php";
   const delete_companies =
     "http://localhost/grpProject%232/flyteer_backend/api/taxi_company/delete.php";
+  const update_companies =
+    "http://localhost/grpProject%232/flyteer_backend/api/taxi_company/update.php";
   const tableBody = document.querySelector(".main-content tbody");
   const createBtn = document.getElementById("createBtn");
   const popupModal = document.getElementById("popupModal");
@@ -103,7 +105,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             <td>${company.taxi_company_address}</td>
             <td>${company.taxi_company_number || "N/A"}</td>
             <td>${company.taxi_company_email}</td>
-            <td>
+            <td class="no-wrap">
               <button class="action-btn update-btn">Update</button>
               <button class="action-btn delete-btn" data-id="${
                 company.taxi_company_id
@@ -179,4 +181,97 @@ document.addEventListener("DOMContentLoaded", async function () {
   cancelDeleteBtn.addEventListener("click", () => {
     deleteModal.style.display = "none";
   });
+
+  document.body.addEventListener("click", function (event) {
+    if (event.target.classList.contains("update-btn")) {
+      const row = event.target.closest("tr");
+      document.getElementById("updateCompanyId").value =
+        row.cells[0].textContent;
+      document.getElementById("updateCompanyName").value =
+        row.cells[1].textContent;
+      document.getElementById("updateCompanyNumber").value =
+        row.cells[3].textContent;
+      document.getElementById("updateCompanyEmail").value =
+        row.cells[4].textContent;
+      document.getElementById("updateCompanyAddress").value =
+        row.cells[2].textContent;
+      document.getElementById("updateModal").style.display = "block";
+    }
+  });
+
+  document.querySelectorAll(".close").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      updateModal.style.display = "none";
+    });
+  });
+
+  // Close modal on outside click
+  window.addEventListener("click", function (event) {
+    if (event.target === document.getElementById("updateModal")) {
+      document.getElementById("updateModal").style.display = "none";
+    }
+  });
+
+  // Update form submission
+  document
+    .getElementById("updateCompanyForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const companyId = document.getElementById("updateCompanyId").value;
+      const companyName = document.getElementById("updateCompanyName").value;
+      const companyNumber = document.getElementById(
+        "updateCompanyNumber"
+      ).value;
+      const companyEmail = document.getElementById("updateCompanyEmail").value;
+      const companyAddress = document.getElementById(
+        "updateCompanyAddress"
+      ).value;
+
+      axios
+        .post(
+          update_companies,
+          {
+            taxi_company_id: companyId,
+            taxi_company_name: companyName,
+            taxi_company_number: companyNumber,
+            taxi_company_email: companyEmail,
+            taxi_company_address: companyAddress,
+          },
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        )
+        .then(function (response) {
+          console.log("Update response:", response.data); // Debug output to check response structure
+          if ((response.data.message = "Taxi company updated successfully.")) {
+            // Check if the 'success' key is true
+            Swal.fire({
+              icon: "success",
+              title: "Updated",
+              text: "Company updated successfully!",
+            });
+            document.getElementById("updateModal").style.display = "none";
+            fetchTaxiCompanies();
+          } else {
+            Swal.fire({
+              icon: "error",
+              title: "Update Failed",
+              text:
+                response.data.error ||
+                "Error updating company. Please try again.",
+            });
+          }
+        })
+        .catch(function (error) {
+          console.error("Update error:", error);
+          Swal.fire({
+            icon: "error",
+            title: "Error",
+            text: "Error updating company. Please try again.",
+          });
+        });
+    });
 });
