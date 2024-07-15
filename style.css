@@ -7,14 +7,13 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     background: #f9f9f9;
     min-height: 100vh;
     overflow-x: hidden;
-    
 }
 
-header{
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -25,42 +24,98 @@ header{
     align-items: center;
     z-index: 100;
 }
-/* pointer-events: none; element will not respond to mouse events such as clicking or hovering*/
-.logo{
+
+.logo {
     font-size: 2em;
     color: #359381;
     pointer-events: none;
     margin-right: 270px;
 }
 
-.navigation a{
+.navigation a {
     text-decoration: none;
     color: #359381;
     padding: 6px 15px;
     border-radius: 20px;
     margin: 0px 10px;
     font-weight: 600;
-    
 }
 
-.navigation a:hover,.navigation a.active{
+.navigation a:hover, .navigation a.active {
     background: #359381;
-    color: #fff
-}
-
-.parallax{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
-#text{
-    position: absolute;
-    font-size: 5em;
     color: #fff;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+main {
+    margin-top: 150px;
+    padding: 0 100px;
+}
+
+.deal-section {
+    text-align: center;
+}
+
+.deal-section h2 {
+    font-size: 2.5em;
+    color: #003329;
+    margin-bottom: 30px;
+}
+
+.deal-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: #e0f7fa;
+    padding: 50px;
+    border-radius: 20px;
+}
+
+.taxi-image {
+    width: 250px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.deal-info {
+    text-align: left;
+}
+
+.deal-info h3 {
+    font-size: 2em;
+    color: #003329;
+}
+
+.car-color {
+    font-size: 0.5em;
+    color: #777;
+}
+
+.deal-info p {
+    font-size: 1.2em;
+    color: #003329;
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.deal-info img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.checkout-button {
+    padding: 15px 30px;
+    background-color: #359381;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+.checkout-button:hover {
+    background-color: #287361;
 }
