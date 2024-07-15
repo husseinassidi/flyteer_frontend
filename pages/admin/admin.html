@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <title>Flyteer Admin Panel</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1>Flyteer Admin Panel</h1>
+      <ul class="container">
+        <li>
+          <a href="taxi_management.html"
+            ><i class="fa-solid fa-taxi"></i> Taxi Management</a
+          >
+        </li>
+        <li>
+          <a href="taxi_cars_management.html"
+            ><i class="fa-solid fa-car"></i> Taxi Cars Management</a
+          >
+        </li>
+        <li>
+          <a href="airplanes_management.html"
+            ><i class="fa-solid fa-plane"></i> Airplanes Management</a
+          >
+        </li>
+        <li>
+          <a href="airports_management.html"
+            ><i class="fa-solid fa-plane-departure"></i> Airports Management</a
+          >
+        </li>
+        <li>
+          <a href="hotel_management.html"
+            ><i class="fa-solid fa-hotel"></i> Hotel Management</a
+          >
+        </li>
+        <li>
+          <a href="booking_management.html"
+            ><i class="fa-solid fa-book"></i> Booking Management</a
+          >
+        </li>
+        <li>
+          <a href="landing_page.html"
+            ><i class="fa-solid fa-book"></i> Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="main-content">
+      <h2>Taxi Company Management</h2>
+      <p class="buttonP">
+        Add a new taxi company:
+        <button class="main-btn" id="createBtn">Add here!</button>
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Company Name</th>
+            <th>Company Address</th>
+            <th>Company Phone Number</th>
+            <th>Company Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Popup Modal for Adding Company -->
+    <div id="popupModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New Taxi Company</h2>
+        <form id="addCompanyForm">
+          <label for="companyName">Company Name:</label>
+          <input
+            type="text"
+            id="companyName"
+            name="companyName"
+            required
+          /><br />
+          <label for="companyNumber">Company Number:</label>
+          <input
+            type="text"
+            id="companyNumber"
+            name="companyNumber"
+            required
+          /><br />
+          <label for="companyEmail">Company Email:</label>
+          <input
+            type="email"
+            id="companyEmail"
+            name="companyEmail"
+            required
+          /><br />
+          <label for="companyAddress">Company Address:</label>
+          <input
+            type="text"
+            id="companyAddress"
+            name="companyAddress"
+            required
+          /><br />
+          <div class="modalBtn">
+            <button type="submit" class="main-btn modalBtn">
+              Add Taxi Company
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Popup Modal for Delete Confirmation -->
+    <div id="deleteModal" class="modal">
+      <div class="modal-content">
+        <h2>Confirm Deletion</h2>
+        <p id="deleteMessage"></p>
+        <div class="modalBtn deletionModal">
+          <button id="cancelDeleteBtn" class="main-btn">Cancel</button>
+          <button id="confirmDeleteBtn" class="main-btn">Yes, Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../../scripts/admin.js"></script>
+  </body>
+</html>

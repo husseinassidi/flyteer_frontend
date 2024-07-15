@@ -1,0 +1,264 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #f8f9fa;
+}
+
+.sidebar {
+  background-color: #b3e5e1;
+  max-width: 250px;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+.sidebar h1 {
+  font-size: 24px;
+  color: #334a38;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 10px 0;
+  font-size: 18px;
+  color: #334a38;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+  color: #1b8b78;
+}
+
+.main-content {
+  padding: 40px;
+  flex-grow: 1;
+}
+
+.main-content h2 {
+  font-size: 28px;
+  color: #334a38;
+  margin-bottom: 20px;
+}
+
+.main-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.main-content .main-btn {
+  background-color: #334a38;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.main-btn {
+  align-self: flex-end;
+}
+
+.main-content .main-btn:hover {
+  background-color: #1b8b78;
+}
+
+.main-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content table th,
+.main-content table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.main-content table th {
+  background-color: #334a38;
+  color: white;
+}
+
+.main-content table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.main-content table tr:hover {
+  background-color: #e2e2e2;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px;
+}
+
+.update-btn {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: #31b0d5;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  animation: fadeIn 0.5s; /* Fade in animation */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto; /* 10% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+  border-radius: 10px;
+  animation: slideIn 0.5s; /* Slide in animation */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Close Button */
+.close {
+  color: #aaa;
+  align-self: flex-end;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Elements */
+.modal-content h2 {
+  color: #334a38; /* Your preferred color */
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #334a38; /* Your preferred color */
+}
+
+.modal-content input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  background-color: #334a38; /* Your preferred button color */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #1b8b78;
+}
+
+.modalBtn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: flex-end;
+}
+
+.delete-modal-content .modalBtn {
+  justify-content: flex-start; /* Align buttons to the start for delete modal */
+}
+
+.delete-modal-content button {
+  margin-right: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.buttonP {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.deletionModal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+}
