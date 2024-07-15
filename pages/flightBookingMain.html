@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flyteer</title>
+    <title>Flights Main Page</title>
     <link rel="stylesheet" href="/flyteer_frontend/styles/flBkStyles.css">
 </head>
 <body>
@@ -13,7 +13,7 @@
             <nav>
                 <ul>
                     <li><a href="#">Stays</a></li>
-                    <li><a href="#">Flights</a></li>
+                    <li ><a href="#" id="flights-button">Flights</a></li>
                     <li><a href="#">Taxis</a></li>
                     <li><a href="#">Register</a></li>
                     <li><a href="#">Sign In</a></li>
@@ -28,8 +28,10 @@
                 <input type="text" placeholder="From Where?">
                 <input type="text" placeholder="To Where?">
                 <input type="date" placeholder="Date">
-                <input type="number" placeholder="Min Price">
-                <input type="number" placeholder="Max Price">
+                <div class="price-range">
+                    <label for="priceRange">$<span id="priceValue">0</span></label>
+                    <input type="range" id="priceRange" min="0" max="500" step="10" value="0">
+                </div>
                 <button class="filter-button">FILTER</button>
             </div>
         </div>

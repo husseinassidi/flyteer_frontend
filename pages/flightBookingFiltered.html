@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights Filtered</title>
+    <link rel="stylesheet" href="/flyteer_frontend/styles/flBkStyles.css">
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Flyteer</div>
+            <nav>
+                <ul>
+                    <li><a href="#">Stays</a></li>
+                    <li><a href="#">Flights</a></li>
+                    <li><a href="#">Taxis</a></li>
+                    <li><a href="#">Register</a></li>
+                    <li><a href="#">Sign In</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-box">
+                <input type="text" placeholder="From Where?">
+                <input type="text" placeholder="To Where?">
+                <input type="date" placeholder="Date">
+                <div class="price-range">
+                    <label for="priceRange">$<span id="priceValue">0</span></label>
+                    <input type="range" id="priceRange" min="0" max="500" step="10" value="0">
+                </div>
+                <button class="filter-button">FILTER</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="suggestions">
+        <div class="container">
+            <h2>Results</h2>
+            <div class="suggestion">
+                <div class="details">
+                    <div class="time">12:40 <span>-</span> 15:55</div>
+                    <div class="route">Beirut <span>-</span> Istanbul</div>
+                </div>
+                <div class="duration">3h 5m</div>
+                <div class="price">$189.60</div>
+                <button class="book-button">BOOK</button>
+            </div>
+            <div class="suggestion">
+                <div class="details">
+                    <div class="time">12:40 <span>-</span> 15:55</div>
+                    <div class="route">Beirut <span>-</span> Istanbul</div>
+                </div>
+                <div class="duration">3h 5m</div>
+                <div class="price">$189.60</div>
+                <button class="book-button">BOOK</button>
+            </div>
+            <div class="suggestion">
+                <div class="details">
+                    <div class="time">12:40 <span>-</span> 15:55</div>
+                    <div class="route">Beirut <span>-</span> Istanbul</div>
+                </div>
+                <div class="duration">3h 5m</div>
+                <div class="price">$189.60</div>
+                <button class="book-button">BOOK</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Flyteer</div>
+            <div class="footer-icons">
+                <a href="#"><img src="phone-icon.png" alt="Phone"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="google-icon.png" alt="Google"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Our Team</a>
+            </div>
+            <div class="footer-copy">© copyright. All rights reserved</div>
+        </div>
+    </footer>
+</body>
+</html>

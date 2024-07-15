@@ -42,10 +42,18 @@ nav ul li a {
     font-weight: bold;
 }
 
+#flights-button {
+    background-color: rgba(52, 100, 88, 1);
+    color: white;
+    border-radius: 15px;
+}
+
 nav ul li a:hover {
     background-color: #D6EADA;
-    border-radius: 5px;
+    border-radius: 15px;
 }
+
+/*  FILTER SECTION */
 
 .filter-section {
     background-color: #B0EACD;
@@ -54,11 +62,24 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
-.filter-box {
+.filter-box, .price-range {
     display: flex;
     justify-content: space-around;
     align-items: center;
     gap: 10px;
+}
+
+
+
+.price-range {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.price-range label {
+    margin-bottom: 5px;
+    font-weight: bold;
 }
 
 .filter-box input {
@@ -81,6 +102,8 @@ nav ul li a:hover {
 .filter-button:hover {
     background-color: #359B84;
 }
+
+/* SUGGESTIONS SECTION */
 
 .suggestions {
     margin-top: 40px;
@@ -127,6 +150,8 @@ nav ul li a:hover {
 .book-button:hover {
     background-color: #359B84;
 }
+
+/* FOOTER */
 
 footer {
     background-color: #fff;
