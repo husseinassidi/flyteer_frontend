@@ -138,31 +138,29 @@ body {
 }
 
 .modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  display: none;
+  position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  animation: fadeIn 0.5s; /* Fade in animation */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s;
 }
 
-/* Modal Content */
 .modal-content {
   background-color: #fefefe;
-  margin: 10% auto; /* 10% from the top and centered */
+  margin: 10% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 50%; /* Could be more or less, depending on screen size */
+  width: 50%;
   border-radius: 10px;
-  animation: slideIn 0.5s; /* Slide in animation */
+  animation: slideIn 0.5s;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Close Button */
 .close {
   color: #aaa;
   align-self: flex-end;
@@ -185,14 +183,14 @@ body {
 
 /* Form Elements */
 .modal-content h2 {
-  color: #334a38; /* Your preferred color */
+  color: #334a38;
   text-align: center;
 }
 
 .modal-content label {
   display: block;
   margin: 10px 0 5px;
-  color: #334a38; /* Your preferred color */
+  color: #334a38;
 }
 
 .modal-content input {
@@ -204,7 +202,7 @@ body {
 }
 
 .modal-content button {
-  background-color: #334a38; /* Your preferred button color */
+  background-color: #334a38;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -225,7 +223,7 @@ body {
 }
 
 .delete-modal-content .modalBtn {
-  justify-content: flex-start; /* Align buttons to the start for delete modal */
+  justify-content: flex-start;
 }
 
 .delete-modal-content button {

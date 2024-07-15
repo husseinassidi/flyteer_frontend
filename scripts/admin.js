@@ -63,14 +63,14 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
         popupModal.style.display = "none";
         fetchTaxiCompanies();
-        addCompanyForm.reset(); // Reset the form after successful submission
+        addCompanyForm.reset();
       } else {
         Swal.fire({
           icon: "error",
           title: "Error",
           text: "Error adding company. Please try again.",
         });
-        console.log(response.data.debug); // Print debug info to console
+        console.log(response.data.debug);
       }
     } catch (error) {
       console.error("Error adding company:", error);
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
       console.log(companies);
 
-      tableBody.innerHTML = ""; // Clear the table before adding new rows
+      tableBody.innerHTML = "";
 
       if (!Array.isArray(companies)) {
         throw new Error("Data format error: expected an array.");
@@ -111,10 +111,9 @@ document.addEventListener("DOMContentLoaded", async function () {
             </td>
           </tr>
         `;
-        tableBody.innerHTML += row; // Append each row to the table body
+        tableBody.innerHTML += row;
       });
 
-      // Add event listeners to delete buttons
       const deleteButtons = document.querySelectorAll(".delete-btn");
       deleteButtons.forEach((button) => {
         button.addEventListener("click", function () {
@@ -133,7 +132,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
   }
 
-  await fetchTaxiCompanies(); // Call the async function to fetch and display taxi companies
+  await fetchTaxiCompanies();
 
   confirmDeleteBtn.addEventListener("click", async () => {
     if (companyToDelete) {
@@ -164,7 +163,7 @@ document.addEventListener("DOMContentLoaded", async function () {
             title: "Error",
             text: "Error deleting company. Please try again.",
           });
-          console.log(response.data.debug); // Print debug info to console
+          console.log(response.data.debug);
         }
       } catch (error) {
         console.error("Error deleting company:", error);
