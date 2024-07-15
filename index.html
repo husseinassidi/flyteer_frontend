@@ -33,30 +33,37 @@
                     <p><img src="Images/company.png" alt="Company Icon"> 4 you taxi</p>
                     <p><img src="Images/calendar.png" alt="Calendar Icon"> wed, jul 17 at 10:00 AM</p>
                     <p><img src="Images/price.png" alt="Price Icon"> 20$</p>
-                    <button class="checkout-button">Go to checkout</button>
+                    <button class="checkout-button" onclick="goToCheckout()">Go to checkout</button>
                 </div>
             </div>
         </section>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <h2 class="footer-logo">Flyteer</h2>
+            <div class="footer-icons">
+                <a href="#"><img src="Images/phone-icon.png" alt="Phone Icon"></a>
+                <a href="#"><img src="Images/instagram-icon.jpg" alt="Instagram Icon"></a>
+                <a href="#"><img src="Images/facebook-icon.png" alt="Facebook Icon"></a>
+                <a href="#"><img src="Images/google-icon.jpg" alt="Google Plus Icon"></a>
+                <a href="#"><img src="Images/youtube-icon.png" alt="YouTube Icon"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Our Team</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; copyright. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function goToCheckout() {
+            window.location.href = 'checkout.html';
+        }
+    </script>
 </body>
-<footer>
-    <div class="footer-container">
-        <h2 class="footer-logo">Flyteer</h2>
-        <div class="footer-icons">
-            <a href="#"><img src="Images/phone-icon.png" alt="Phone Icon"></a>
-            <a href="#"><img src="Images/instagram-icon.jpg" alt="Instagram Icon"></a>
-            <a href="#"><img src="Images/facebook-icon.png" alt="Facebook Icon"></a>
-            <a href="#"><img src="Images/google-icon.jpg" alt="Google Plus Icon"></a>
-            <a href="#"><img src="Images/youtube-icon.png" alt="YouTube Icon"></a>
-        </div>
-        <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Our Team</a>
-        </div>
-        <div class="footer-copyright">
-            <p>&copy; copyright. All rights reserved</p>
-        </div>
-    </div>
-</footer>
 </html>
