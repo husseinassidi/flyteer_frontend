@@ -160,55 +160,7 @@ main {
     font-size: 1em;
     justify-self: center;
 }
-.checkout-section {
-    text-align: center;
-    margin-top: 100px;
-}
 
-.checkout-section h2 {
-    font-size: 2.5em;
-    color: #003329;
-    margin-bottom: 30px;
-}
-
-.checkout-form {
-    background-color: #b2f0ea;
-    padding: 50px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    width: 50%; /* Decrease the width of the form container */
-    margin: 0 auto; /* Center the form container */
-}
-
-.checkout-form input {
-    width: 300px;
-    padding: 15px;
-    border: none;
-    border-radius: 10px;  /* Match the rounded corners */
-    font-size: 1em;
-    color: #d0dbd8;
-    background-color: #ffffff;  /* Light blue background */
-    text-align: center;  /* Center align text inside the input fields */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for a 3D effect */
-}
-
-.checkout-form button {
-    padding: 15px 30px;
-    background-color: #359381;
-    color: white;
-    border: none;
-    border-radius: 10px;  /* Match the rounded corners */
-    cursor: pointer;
-    font-size: 1em;
-    width: 200px;  /* Make the button width consistent */
-}
-
-.checkout-form button:hover {
-    background-color: #287361;
-}
 
 footer {
     background: #f0f9f6;
