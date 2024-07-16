@@ -1,8 +1,8 @@
 // flightMain.js - Contains DOM manipulation and event handling for flights
 
 // Import CRUD functions for flights
-import getFlights   from './flight_scripts/getFlights.js';
-import getFlight from './flight_scripts/getFlight.js';
+import getFlights   from '/flyteer_frontend/scripts/flight_scripts/getFlights.js';
+import getFlight from '/flyteer_frontend/scripts/flight_scripts/getFlight.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     // Event listener for filter button

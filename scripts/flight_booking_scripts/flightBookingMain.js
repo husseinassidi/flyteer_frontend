@@ -1,8 +1,8 @@
 // flightBookingMain.js - Contains DOM manipulation and event handling for flight bookings
 
 // Import CRUD functions for flight bookings
-import createFlightBooking  from './flight_booking_scripts/create.js';
-import deleteFlightBooking  from './flight_booking_scripts/delete.js';
+import createFlightBooking  from '/flyteer_frontend/scripts/flight_booking_scripts/create.js';
+import deleteFlightBooking  from '/flyteer_frontend/scripts/flight_booking_scripts/delete.js';
 
 
 document.addEventListener('DOMContentLoaded', function() {
