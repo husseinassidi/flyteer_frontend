@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Manager Login</title>
+    <link rel="stylesheet" href="../styles/login.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="login-container">
+      <form class="login-form">
+        <h2>Welcome Aboard</h2>
+        <div class="input-group">
+          <input type="text" id="username" required />
+          <label for="username">Username</label>
+          <i class="icon user-icon"></i>
+        </div>
+        <div class="input-group">
+          <input type="password" id="password" required />
+          <label for="password">Password</label>
+          <i class="icon lock-icon"></i>
+        </div>
+        <button class="loginBtn" type="submit">Log In</button>
+      </form>
+    </div>
+    <script src="../scripts/login.js"></script>
+  </body>
+</html>
