@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
   const cancelDeleteBtn = document.getElementById("cancelDeleteBtn");
   const deleteMessage = document.getElementById("deleteMessage");
+  const logoutBtn = document.getElementById("logoutBtn");
 
   let companyToDelete = null;
   const token = localStorage.getItem("jwtToken");
@@ -31,8 +32,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       return;
     }
   } else {
-    alert("No token found. Redirecting to login.");
-    window.location.href = "/login";
+    window.location.href = "/pages/login.html";
     return;
   }
 
@@ -291,4 +291,8 @@ document.addEventListener("DOMContentLoaded", async function () {
           });
         });
     });
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("jwtToken");
+    window.location.href = "../login.html";
+  });
 });
