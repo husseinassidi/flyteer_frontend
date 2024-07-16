@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Flights Main Page</title>
     <link rel="stylesheet" href="/flyteer_frontend/styles/flight_booking_styles/flight_booking_styles.css">
+    
 </head>
 <body>
     <header>
@@ -64,12 +66,21 @@
     </footer>
 
         <!-- Include JavaScript files --><!-- Include JavaScript files -->
-<script src="/flyteer_frontend/scripts/flight_booking_scripts/create.js"></script>
-<script src="/flyteer_frontend/scripts/flight_booking_scripts/getFlightBookings.js"></script>
-<script src="/flyteer_frontend/scripts/flight_booking_scripts/getFlightBookings.js"></script>
-<script src="/flyteer_frontend/scripts/flight_booking_scripts/update.js"></script>
-<script src="/flyteer_frontend/scripts/flight_booking_scripts/delete.js"></script>
-<script src="/flyteer_frontend/scripts/main.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_booking_scripts/create.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_booking_scripts/getFlightBookings.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_booking_scripts/getFlightBookings.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_booking_scripts/update.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_booking_scripts/delete.js"></script>
+
+<script type="module" src="/flyteer_frontend/scripts/flight_scripts/create.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_scripts/delete.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_scripts/getFlight.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_scripts/getFlights.js"></script>
+<script type="module" src="/flyteer_frontend/scripts/flight_scripts/update.js"></script>
+
+<script src="/flyteer_frontend/scripts/flight_booking_scripts/flightBookingMain.js"></script>
+<script src="/flyteer_frontend/scripts/flight_scripts/flightMain.js"></script>
+
 
 </body>
 </html>
