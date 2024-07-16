@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   const confirmDeleteBtn = document.getElementById("confirmDeleteBtn");
   const cancelDeleteBtn = document.getElementById("cancelDeleteBtn");
   const deleteMessage = document.getElementById("deleteMessage");
+  const logoutBtn = document.getElementById("logoutBtn");
 
   let taxiToDelete = null;
   const token = localStorage.getItem("jwtToken");
@@ -337,4 +338,8 @@ document.addEventListener("DOMContentLoaded", async function () {
         });
       }
     });
+  logoutBtn.addEventListener("click", () => {
+    localStorage.removeItem("jwtToken");
+    window.location.href = "../login.html";
+  });
 });
