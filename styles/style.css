@@ -11,19 +11,19 @@ body{
     background: #f9f9f9;
     min-height: 100vh;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
     
 }
 
 header{
-    position: absolute;
-    top: 0;
-    left: 0;
+
     width: 100%;
     padding: 30px 100px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    z-index: 100;
+    z-index: 0;
 }
 /* pointer-events: none; element will not respond to mouse events such as clicking or hovering*/
 .logo{
@@ -31,6 +31,12 @@ header{
     color: #359381;
     pointer-events: none;
     margin-right: 270px;
+}
+main{
+    height: 70vh;
+    width:auto;
+    display: flex;
+    justify-content: center;
 }
 
 .navigation a{
