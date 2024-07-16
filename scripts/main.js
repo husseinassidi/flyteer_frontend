@@ -7,7 +7,7 @@ async function filterFlights() {
     const date = document.getElementById('date').value;
     const price = document.getElementById('price').value;
 
-    const url = 'http://localhost/FLYTEER_BACKEND/flyteer_backend/api/flights/read.php';
+    const url = 'http://localhost/FlyteerBackend/flyteer_backend/api/flights/read.php';
     const response = await fetch(url);
     const flights = await response.json();
 
@@ -52,7 +52,7 @@ function bookFlight(flightId) {
 // Function to read and display a single flight's details
 async function readOneFlight() {
     const flightId = localStorage.getItem('selectedFlightId');
-    const url = `http://localhost/FLYTEER_BACKEND/flyteer_backend/api/flights/readOne.php?flight_id=${flightId}`;
+    const url = `http://localhost/FlyteerBackend/flyteer_backend/api/flights/readOne.php?flight_id=${flightId}`;
 
     const response = await fetch(url);
     const flight = await response.json();
@@ -76,7 +76,7 @@ async function confirmBooking() {
     const flightId = localStorage.getItem('selectedFlightId');
     const userId = 1; // Example user ID, change as needed
 
-    const url = 'http://localhost/FLYTEER_BACKEND/flyteer_backend/api/booking/flight/create.php';
+    const url = 'http://localhost/FlyteerBackend/flyteer_backend/api/booking/flight/create.php';
     const data = {
         user_id: userId,
         flight_id: flightId
@@ -111,7 +111,7 @@ async function deleteBooking() {
     const flightId = localStorage.getItem('selectedFlightId');
     const userId = 1; // Example user ID, change as needed
 
-    const url = 'http://localhost/FLYTEER_BACKEND/flyteer_backend/api/booking/flight/delete.php';
+    const url = 'http://localhost/FlyteerBackend/flyteer_backend/api/booking/flight/delete.php';
     const data = {
         user_id: userId,
         flight_id: flightId
