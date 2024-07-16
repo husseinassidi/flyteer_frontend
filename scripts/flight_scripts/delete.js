@@ -1,6 +1,5 @@
 // Import axios
-const axios = require('axios');
-
+import axios from 'axios'
 // Function to delete a flight
 async function deleteFlight(flightId) {
     try {

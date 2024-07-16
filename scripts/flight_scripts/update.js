@@ -1,6 +1,5 @@
 // Import axios correctly
-const axios = require('axios');
-
+import axios from 'axios'
 // Function to update a flight
 async function updateFlight(flightId, airline, flightNumber, departureAirport, arrivalAirport, departureTime, arrivalTime, price) {
     try {

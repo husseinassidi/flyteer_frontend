@@ -1,6 +1,5 @@
 // Import axios
-const axios = require('axios');
-
+import axios from 'axios'
 // Function to read flight bookings
 async function readFlightBookings() {
     try {

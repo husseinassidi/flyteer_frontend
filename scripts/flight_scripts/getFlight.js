@@ -1,6 +1,5 @@
 // Import axios
-const axios = require('axios');
-
+import axios from 'axios'
 // Function to get a flight by ID using POST request
 async function getFlight(flightId) {
     try {

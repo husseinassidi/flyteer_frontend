@@ -1,6 +1,5 @@
 // Import axios
-const axios = require('axios');
-
+import axios from 'axios'
 // Function to create a flight booking
 async function createFlightBooking(userId, flightId) {
     try {
