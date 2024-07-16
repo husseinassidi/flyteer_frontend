@@ -18,6 +18,23 @@ document.addEventListener("DOMContentLoaded", async function () {
   const deleteMessage = document.getElementById("deleteMessage");
 
   let companyToDelete = null;
+  const token = localStorage.getItem("jwtToken");
+  if (token) {
+    const decodedToken = jwt_decode(token);
+    if (decodedToken.role !== "admin") {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "access denied",
+      });
+      window.location.href = "/dashboard";
+      return;
+    }
+  } else {
+    alert("No token found. Redirecting to login.");
+    window.location.href = "/login";
+    return;
+  }
 
   createBtn.addEventListener("click", () => {
     popupModal.style.display = "block";

@@ -12,17 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   form.addEventListener("submit", async function (event) {
-    event.preventDefault(); // Prevent the default form submission
+    event.preventDefault();
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
 
     try {
-      console.log(username, password); // Debugging line to check the inputs
+      console.log(username, password);
       const response = await axios.post(
         loginUrl,
         {
-          email: username, // Assuming your backend expects an email, not a username
+          email: username,
           password: password,
         },
         {
@@ -32,30 +32,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       );
 
-      console.log(response.data); // Handling the response from your backend
+      console.log(response.data);
 
       if (response.data.success) {
-        // Assuming the JWT token is in response.data.jwt
         const token = response.data.jwt;
         const decodedToken = jwt_decode(token);
         console.log("Decoded JWT Token:", decodedToken);
 
-        // Store the JWT token in local storage
         localStorage.setItem("jwtToken", token);
 
         if (decodedToken.role === "admin") {
           alert("Admin login successful");
-          window.location.href = "admin/admin.html"; // Redirect to admin dashboard if login is successful
+          window.location.href = "admin/admin.html";
         } else {
           alert("User login successful");
-          // window.location.href = "/dashboard"; // Redirect to user dashboard if login is successful
+          window.location.href = "/dashboard";
         }
       } else {
         alert(response.data.message || "Login failed.");
       }
     } catch (error) {
       console.error("Login error:", error);
-      alert("An error occurred during login."); // Handling errors
+      alert("An error occurred during login.");
     }
   });
 });
