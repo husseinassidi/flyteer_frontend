@@ -36,7 +36,9 @@ main{
     height: 70vh;
     width:auto;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .navigation a{

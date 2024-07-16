@@ -1,7 +1,8 @@
 // Import axios
-import axios from 'axios';
+// import axios from '/axios';
+
 // Function to get a hotel by ID using POST request
-async function getHotel(hotelId) {
+export default async function getHotel(hotelId) {
     try {
         // Define the URL of your API endpoint
         const url = 'http://localhost/FLYTEER_BACKEND/flyteer_backend/api/hotel/getHotel.php';
@@ -24,14 +25,3 @@ async function getHotel(hotelId) {
         throw error;
     }
 }
-
-// Example usage of the getHotel function
-getHotel(3)
-    .then(response => {
-        // Handle the successful response
-        console.log('Hotel details retrieved successfully:', response);
-    })
-    .catch(error => {
-        // Handle any errors
-        console.error('Error:', error);
-    });

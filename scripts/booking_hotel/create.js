@@ -1,7 +1,9 @@
 // Import axios
-// import axios from "axios";
+// import axios from 'axios';
+import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js';
+
 // Function to create a hotel booking
-export default async function createHotelBooking(userId, hotelId, checkInDate, checkOutDate, status) {
+export default async function createHotelBooking(userId, hotelId, checkInDate, checkOutDate, status,unique_id) {
     try {
         // Define the URL of your API endpoint
         const url = 'http://localhost/FLYTEER_BACKEND/flyteer_backend/api/booking/hotel/create.php';
@@ -12,7 +14,9 @@ export default async function createHotelBooking(userId, hotelId, checkInDate, c
             hotel_id: hotelId,
             check_in_date: checkInDate,
             check_out_date: checkOutDate,
-            status: status
+            status: status,
+            unique_id: unique_id
+
         };
 
         // Make the POST request using Axios
