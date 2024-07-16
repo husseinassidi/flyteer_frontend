@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights Main Page</title>
+    <link rel="stylesheet" href="/flyteer_frontend/styles/flight_booking_styles/flight_booking_styles.css">
+</head>
+<body>
+    <header>
+        <h2 class="logo">Flyteer</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">Stays</a>
+            <a href="#" class="active">Flight</a>
+            <a href="#">Taxis</a>
+            <a onclick="signUp()" class="button">Register</a>
+            <a onclick="signIn()" class="button">Sign in</a>
+        </nav>   
+        <div class="menu-toggle" onclick="toggleMenu()"></div>
+    </header>
+
+    <main>
+        <section class="filter-section">
+            <div class="filter-box">
+                <input type="text" id="from" placeholder="From Where?">
+                <input type="text" id="to" placeholder="To Where?">
+                <input type="date" id="date">
+                <div class="price-range">
+                    <label for="price">Price Range:</label>
+                    <input type="range" id="price" name="price" min="0" max="1000" oninput="document.getElementById('price-value').textContent = this.value">
+                    <span id="price-value">500</span>
+                </div>
+                <button class="filter-button" onclick="filterFlights()">Filter</button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="results-container" id="results-container">
+                <!-- Flights will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <h2 class="footer-logo">Flyteer</h2>
+            <div class="footer-icons">
+                <a href="#"><img src="/flyteer_frontend/Images/phone-icon.png" alt="Phone Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/instagram-icon.jpg" alt="Instagram Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/facebook-icon.png" alt="Facebook Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/google-icon.jpg" alt="Google Plus Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/youtube-icon.png" alt="YouTube Icon"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Our Team</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; copyright. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Include JavaScript files -->
+    <script src="/flyteer_frontend/scripts/flight_booking_scripts/filter.js"></script>
+    <script src="/flyteer_frontend/scripts/flight_booking_scripts/bookFlight.js"></script>
+    <script src="/flyteer_frontend/scripts/flight_booking_scripts/readOne.js"></script>
+    <script src="/flyteer_frontend/scripts/flight_booking_scripts/confirmBooking.js"></script>
+    <script src="/flyteer_frontend/scripts/flight_booking_scripts/deleteBooking.js"></script>
+</body>
+</html>
