@@ -1,0 +1,335 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  display: flex;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.sidebar {
+  background-color: #b3e5e1;
+  width: 250px;
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+}
+
+.container {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  color: #334a38;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+
+.sidebar ul li a {
+  display: block;
+  padding: 10px 0;
+  font-size: 18px;
+  color: #334a38;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.sidebar ul li a i {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+.sidebar ul li a:hover {
+  color: #1b8b78;
+}
+
+.main-content {
+  padding: 20px;
+  margin-left: 270px; /* Adjust this value based on sidebar width and padding */
+  width: calc(100% - 270px);
+  box-sizing: border-box;
+}
+
+.main-content h2 {
+  font-size: 28px;
+  color: #334a38;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.main-content p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.main-content .main-btn {
+  background-color: #334a38;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.main-content .main-btn:hover {
+  background-color: #1b8b78;
+}
+
+.main-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.main-content table th,
+.main-content table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.main-content table th {
+  background-color: #334a38;
+  color: white;
+}
+
+.main-content table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.main-content table tr:hover {
+  background-color: #e2e2e2;
+}
+
+.action-btn {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 5px;
+}
+
+.update-btn {
+  background-color: #5bc0de;
+  color: white;
+}
+
+.update-btn:hover {
+  background-color: #31b0d5;
+}
+
+.delete-btn {
+  background-color: #d9534f;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c9302c;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  animation: fadeIn 0.5s;
+}
+
+.closeUpdate {
+  align-self: flex-end;
+}
+.closeUpdate:hover {
+  cursor: pointer;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  animation: slideIn 0.5s;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+  color: #aaa;
+  align-self: flex-end;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Form Elements */
+.modal-content h2 {
+  color: #334a38;
+  text-align: center;
+}
+
+.modal-content label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #334a38;
+}
+
+.modal-content input {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.modal-content button {
+  background-color: #334a38;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #1b8b78;
+}
+
+.modalBtn {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  justify-content: flex-end;
+}
+
+.delete-modal-content .modalBtn {
+  justify-content: flex-start;
+}
+
+.delete-modal-content button {
+  margin-right: 10px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.buttonP {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.deletionModal {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  .main-content {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .main-content table,
+  .main-content table th,
+  .main-content table td {
+    display: block;
+    width: 100%;
+  }
+
+  .main-content table th,
+  .main-content table td {
+    text-align: left;
+    padding: 10px;
+  }
+
+  .main-content table th {
+    background-color: #334a38;
+    color: white;
+  }
+
+  .main-content table tr {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .main-content table tr:nth-child(even) {
+    background-color: transparent;
+  }
+
+  .main-content table tr:hover {
+    background-color: transparent;
+  }
+
+  .action-btn {
+    width: 100%;
+    margin: 5px 0;
+  }
+  no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-self: center;
+  }
+}

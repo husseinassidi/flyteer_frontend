@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../styles/style.css">
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../../styles/style.css">
+    <script  type='module' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Book a stay</title>
 </head>
 <body>
     <header>
@@ -21,21 +22,14 @@
         <div class="menu-toggle" onclick="toggleMenu()"></div>
     </header>
 
-<main>
 
-    <form action="">
-        <input type="text" name="" id="location" placeholder="Location">
-        <input type="text" name="" id="hotel_name" placeholder="Hotel Name">
-        <input type="text" name="" id="budget" placeholder="Budget">
-        <button type="submit" id="search_hotel">Search</button>
+    <main>
+        <h1>Book a Hotel Say</h1>
+        <div id="hotel_stay_card">  </div>
 
-    </form>
 
-    <div class="filter_container">
+    </main>
 
-    </div>
-
-</main>
 
     <footer>
         <div class="footer-container">
@@ -58,7 +52,8 @@
         </div>
     </footer>
 
-    <!-- <script src="../../scripts/booking_hotel/create.js"></script> -->
-    <script  type="module" src="../../scripts/booking_hotel/main.js" ></script>
+    <script type="module" src="../../scripts/booking_hotel/view_deal.js"></script>
+
+
 </body>
 </html>
