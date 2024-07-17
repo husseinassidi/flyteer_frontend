@@ -44,26 +44,22 @@ async function displayFilteredTaxis(pickup_location) {
         // Add event listeners to "View Deal" buttons
         const viewButtons = document.querySelectorAll(".view_deal");
         viewButtons.forEach(button => {
-            button.addEventListener('click', async (event) => {
+            button.addEventListener('click', (event) => {
                 event.preventDefault();
                 // Access the button's ID and extract taxi ID
                 const taxiId = event.currentTarget.id.replace('btn_', '');
                 console.log('View Deal clicked for taxi ID:', taxiId);
 
-                try {
-                    // Fetch the detailed taxi information
-                    const taxiDetails = await getTaxi(taxiId);
-                    console.log('Taxi details:', taxiDetails);
+                // Find the selected taxi from filtered taxis
+                const selectedTaxi = filteredTaxis.find(taxi => taxi.taxi_id == taxiId);
+                console.log('Selected taxi details:', selectedTaxi);
 
-                    // Store the selected taxi details in localStorage
-                    localStorage.setItem('selectedTaxi', JSON.stringify(taxiDetails[0]));
+                // Store the selected taxi details in localStorage
+                localStorage.setItem('selectedTaxi', JSON.stringify(selectedTaxi));
+                console.log('Stored selected taxi details in localStorage:', selectedTaxi);
 
-                    // Redirect to the taxi booking page
-                    window.location.href = "../taxi_booking/taxibooking.html";
-
-                } catch (error) {
-                    console.error('Error fetching taxi details:', error);
-                }
+                // Redirect to the taxi booking page
+                window.location.href = "../taxi_booking/taxibooking.html";
             });
         });
     } catch (error) {

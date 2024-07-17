@@ -37,8 +37,3 @@ async function handleSubmit(event) {
         alert('An error occurred while booking the taxi.');
     }
 }
-
-function handleSubmit(event) {
-    event.preventDefault(); // Prevent the form from submitting
-    alert('Your taxi is booked!');
-}
