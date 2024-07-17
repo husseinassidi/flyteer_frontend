@@ -1,15 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM fully loaded and parsed");
-
   const loginUrl =
     "http://localhost/grpProject%232/flyteer_backend/api/user/login.php";
   const form = document.querySelector(".login-form");
-
-  if (form) {
-    console.log("Form found");
-  } else {
-    console.log("Form not found");
-  }
 
   form.addEventListener("submit", async function (event) {
     event.preventDefault();

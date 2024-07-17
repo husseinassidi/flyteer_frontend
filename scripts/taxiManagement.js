@@ -1,4 +1,6 @@
+import auth from "./Auth.js";
 document.addEventListener("DOMContentLoaded", async function () {
+  auth();
   const get_taxi_company =
     "http://localhost/grpProject%232/flyteer_backend/api/taxi_company/read.php";
   const get_taxis =
@@ -21,23 +23,6 @@ document.addEventListener("DOMContentLoaded", async function () {
   const logoutBtn = document.getElementById("logoutBtn");
 
   let taxiToDelete = null;
-  const token = localStorage.getItem("jwtToken");
-  if (token) {
-    const decodedToken = jwt_decode(token);
-    if (decodedToken.role !== "admin") {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "Access denied",
-      });
-      window.location.href = "/dashboard";
-      return;
-    }
-  } else {
-    alert("No token found. Redirecting to login.");
-    window.location.href = "/login";
-    return;
-  }
 
   createBtn.addEventListener("click", () => {
     popupModal.style.display = "block";
