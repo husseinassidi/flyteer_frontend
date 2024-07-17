@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/style.css">
+    <script  type='module' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Book a stay</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Flyteer</h2>
+        <nav class="navigation">
+            <a href="#"  onclick="location.href='../home/index.html'">Home</a>
+            <a href="#" class="active">Stays</a>
+            <a href="#">Flight</a>
+            <a href="#" >Taxis</a>
+            <a  onclick="signUp()" class="button">Register</a>
+            <a  onclick="signIn()" class="button">Sign in</a>
+        </nav>   
+        <div class="menu-toggle" onclick="toggleMenu()"></div>
+    </header>
+
+
+    <main>
+        <h1>Book a Hotel Say</h1>
+        <div id="hotel_stay_card">  </div>
+
+
+    </main>
+
+
+    <footer>
+        <div class="footer-container">
+            <h2 class="footer-logo">Flyteer</h2>
+            <div class="footer-icons">
+                <a href="#"><img src="../../Images/phone-icon.png" alt="Phone Icon"></a>
+                <a href="#"><img src="../../Images/instagram-icon.jpg" alt="Instagram Icon"></a>
+                <a href="#"><img src="../../Images/facebook-icon.png" alt="Facebook Icon"></a>
+                <a href="#"><img src="../../Images/google-icon.jpg" alt="Google Plus Icon"></a>
+                <a href="#"><img src="../../Images/youtube-icon.png" alt="YouTube Icon"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Our Team</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; copyright. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="../../scripts/booking_hotel/view_deal.js"></script>
+
+
+</body>
+</html>
