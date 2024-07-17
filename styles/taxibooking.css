@@ -14,7 +14,6 @@ body {
 }
 
 header {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -45,6 +44,54 @@ header {
     background: #359381;
     color: #fff;
 }
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+    header {
+        padding: 20px 50px;
+    }
+    .logo {
+        margin-right: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .logo {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+    .navigation {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    .navigation a {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 10px;
+    }
+    .logo {
+        font-size: 1.5em;
+    }
+    .navigation {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navigation a {
+        padding: 5px 10px;
+        margin: 5px 0;
+    }
+}
+
 
 main {
     margin-top: 150px;

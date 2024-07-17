@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/hotelbooking.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -23,12 +23,13 @@
 
 <main>
 
-    <form action="">
-        <input type="text" name="" id="location" placeholder="Location">
+    <form action="" class="search-form">
+       <div class="form-group"> 
+        <input type="text" name="" id="location" placeholder="Location" >
         <input type="text" name="" id="hotel_name" placeholder="Hotel Name">
         <input type="text" name="" id="budget" placeholder="Budget">
-        <button type="submit" id="search_hotel">Search</button>
-
+        <button type="submit" id="search_hotel" class="search-button">Search</button>
+       </div>
     </form>
 
     <div class="filter_container">
