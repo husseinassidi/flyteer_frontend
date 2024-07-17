@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to get a flight by ID using POST request
 async function getFlight(flightId) {
     try {
@@ -24,6 +24,7 @@ async function getFlight(flightId) {
         throw error;
     }
 }
+export default getFlight;
 
 // Example usage of the getFlight function
 getFlight(1)

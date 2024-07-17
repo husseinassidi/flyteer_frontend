@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to delete a flight booking
 async function deleteFlightBooking(bookingId) {
     try {
@@ -15,6 +15,7 @@ async function deleteFlightBooking(bookingId) {
         throw error;
     }
 }
+export default deleteFlightBooking;
 
 // Example usage
 deleteFlightBooking(1)

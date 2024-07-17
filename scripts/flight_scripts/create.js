@@ -1,5 +1,5 @@
 // Import axios correctly
-import axios from 'axios'
+// import axios from 'axios'
 // Function to create a flight
 async function createFlight(airline, flightNumber, departureAirport, arrivalAirport, departureTime, arrivalTime, price) {
     try {
@@ -30,6 +30,7 @@ async function createFlight(airline, flightNumber, departureAirport, arrivalAirp
         throw error;
     }
 }
+export default createFlight;
 
 // Example usage of the createFlight function
 createFlight('Airline A', 'AA101', 1, 2, '2024-07-20 10:00:00', '2024-07-20 12:00:00', 300)

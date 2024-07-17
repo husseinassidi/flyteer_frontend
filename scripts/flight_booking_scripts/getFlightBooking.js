@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to get a flight booking by ID
 async function readOneFlightBooking(bookingId) {
     try {
@@ -15,6 +15,7 @@ async function readOneFlightBooking(bookingId) {
         throw error;
     }
 }
+export default readOneFlightBooking;
 
 // Example usage
 readOneFlightBooking(1)

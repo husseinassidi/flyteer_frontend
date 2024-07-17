@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to update a flight booking
 async function updateFlightBooking(bookingId, flightId, status) {
     try {
@@ -17,6 +17,7 @@ async function updateFlightBooking(bookingId, flightId, status) {
         throw error;
     }
 }
+export default updateFlightBooking;
 
 // Example usage
 updateFlightBooking(1, 1, 'confirmed')

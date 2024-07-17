@@ -1,5 +1,5 @@
 // Import axios correctly
-import axios from 'axios'
+// import axios from 'axios'
 // Function to update a flight
 async function updateFlight(flightId, airline, flightNumber, departureAirport, arrivalAirport, departureTime, arrivalTime, price) {
     try {
@@ -31,6 +31,7 @@ async function updateFlight(flightId, airline, flightNumber, departureAirport, a
         throw error;
     }
 }
+export default updateFlight;
 
 // Example usage of the updateFlight function
 updateFlight(4, 'Updated Airline', 'UA404', 1, 2, '2024-08-01 10:00:00', '2024-08-01 14:00:00', 350)

@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to create a flight booking
 async function createFlightBooking(userId, flightId) {
     try {
@@ -16,6 +16,9 @@ async function createFlightBooking(userId, flightId) {
         throw error;
     }
 }
+
+export default createFlightBooking;
+
 
 // Example usage
 createFlightBooking(1, 1)

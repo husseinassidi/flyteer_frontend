@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to get flights
 async function getFlights() {
     try {
@@ -12,6 +12,7 @@ async function getFlights() {
         throw error;
     }
 }
+export default getFlights;
 
 // Example usage
 getFlights()

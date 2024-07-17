@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to delete a flight
 async function deleteFlight(flightId) {
     try {
@@ -24,6 +24,7 @@ async function deleteFlight(flightId) {
         throw error;
     }
 }
+export default deleteFlight;
 
 // Example usage of the deleteFlight function
 deleteFlight(1)

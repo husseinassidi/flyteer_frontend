@@ -1,5 +1,5 @@
 // Import axios
-import axios from 'axios'
+// import axios from 'axios'
 // Function to read flight bookings
 async function readFlightBookings() {
     try {
@@ -12,7 +12,7 @@ async function readFlightBookings() {
         throw error;
     }
 }
-
+export default readFlightBookings;
 // Example usage
 readFlightBookings()
     .then(response => {
