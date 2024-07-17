@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taxis</title>
-    <link rel="stylesheet" href="/styles/taxi.css">
+    <title>Taxi Booking</title>
+    <link rel="stylesheet" href="../../styles/taxi.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="../../scripts/taxi_booking/main.js"></script>
 </head>
 <body>
     <header>
         <h2 class="logo">Flyteer</h2>
         <nav class="navigation">
-            <a href="#" onclick="location.href='index.html'" >Home</a>
-            <a href="#">Stays</a>
+            <a href="#" onclick="location.href='../home/index.html'">Home</a>
+            <a href="#" onclick="location.href='../hotel_booking/hotel_booking_filter.html'">Stays</a>
             <a href="#">Flight</a>
             <a href="#" class="active">Taxis</a>
             <a onclick="signUp()" class="button">Register</a>
@@ -24,81 +26,51 @@
         <section class="search-section">
             <h2>Taxi rentals for any kind of trip</h2>
             <h3>Great Taxis at great prices from the biggest Taxis companies</h3>
-            <form class="search-form">
+            <form class="search-form" id="searchForm">
                 <div class="form-group">
-                    <label for="pickup-location"><img src="Images/pickup-icon.png" alt="Pickup Icon"> Pick-up location</label>
-                    <input type="text" id="pickup-location" placeholder="Enter location">
+                    <label for="pickup-location"><img src="../../Images/pickup-icon.png" alt="Pickup Icon"> Pick-up location</label>
+                    <input type="text" id="pickup-location" name="pickup-location" placeholder="Enter location">
                 </div>
                 <div class="form-group">
-                    <label for="destination"><img src="Images/pickup-icon.png" alt="Destination Icon"> Where-to-go?</label>
-                    <input type="text" id="destination" placeholder="Enter destination">
+                    <label for="destination"><img src="../../Images/pickup-icon.png" alt="Destination Icon"> Where-to-go?</label>
+                    <input type="text" id="destination" name="destination" placeholder="Enter destination">
                 </div>
                 <div class="form-group">
-                    <label for="pickup-date"><img src="Images/date-icon.png" alt="Date Icon"> Pick-up date</label>
-                    <input type="date" id="pickup-date">
+                    <label for="pickup-date"><img src="../../Images/date-icon.png" alt="Date Icon"> Pick-up date</label>
+                    <input type="date" id="pickup-date" name="pickup-date">
                 </div>
                 <div class="form-group">
-                    <label for="pickup-time"><img src="Images/time.jpg" alt="Time Icon"> Time</label>
-                    <input type="time" id="pickup-time">
+                    <label for="pickup-time"><img src="../../Images/time.jpg" alt="Time Icon"> Time</label>
+                    <input type="time" id="pickup-time" name="pickup-time">
                 </div>
                 <button type="submit" class="search-button">Search</button>
             </form>
         </section>
 
-        <section class="results-section">
-            <div class="taxi-card">
-                <img src="Images/taxi-image.png" alt="Taxi Image">
-                <div class="taxi-info">
-                    <div class="info-group">Location</div>
-                    <div class="info-group">Company</div>
-                    <div class="info-group">Destination</div>
-                    <div class="info-group">Date and Time</div>
-                    <div class="info-group">Price</div>
-                    <div class="info-group">Beirut</div>
-                    <div class="info-group">4 you taxi</div>
-                    <div class="info-group">Jounieh</div>
-                    <div class="info-group">Wed, Jul 17 at 10:00 AM</div>
-                    <div class="info-group">$20</div>
-                    <button class="view-deal">View Deal</button>
-                </div>
-            </div>
-            <div class="taxi-card">
-                <img src="Images/taxi-image.png" alt="Taxi Image">
-                <div class="taxi-info">
-                    <div class="info-group">Location</div>
-                    <div class="info-group">Company</div>
-                    <div class="info-group">Destination</div>
-                    <div class="info-group">Date and Time</div>
-                    <div class="info-group">Price</div>
-                    <div class="info-group">Beirut</div>
-                    <div class="info-group">4 you taxi</div>
-                    <div class="info-group">Jounieh</div>
-                    <div class="info-group">Wed, Jul 17 at 11:00 AM</div>
-                    <div class="info-group">$36</div>
-                    <button class="view-deal">View Deal</button>
-                </div>
-            </div>
+        <section class="results-section" id="resultsSection">
+            <!-- Results will be injected here -->
         </section>
     </main>
+
+    <footer>
+        <div class="footer-container">
+            <h2 class="footer-logo">Flyteer</h2>
+            <div class="footer-icons">
+                <a href="#"><img src="../../Images/phone-icon.png" alt="Phone Icon"></a>
+                <a href="#"><img src="../../Images/instagram-icon.jpg" alt="Instagram Icon"></a>
+                <a href="#"><img src="../../Images/facebook-icon.png" alt="Facebook Icon"></a>
+                <a href="#"><img src="../../Images/google-icon.jpg" alt="Google Plus Icon"></a>
+                <a href="#"><img src="../../Images/youtube-icon.png" alt="YouTube Icon"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Our Team</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; copyright. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
 </body>
-<footer>
-    <div class="footer-container">
-        <h2 class="footer-logo">Flyteer</h2>
-        <div class="footer-icons">
-            <a href="#"><img src="Images/phone-icon.png" alt="Phone Icon"></a>
-            <a href="#"><img src="Images/instagram-icon.jpg" alt="Instagram Icon"></a>
-            <a href="#"><img src="Images/facebook-icon.png" alt="Facebook Icon"></a>
-            <a href="#"><img src="Images/google-icon.jpg" alt="Google Plus Icon"></a>
-            <a href="#"><img src="Images/youtube-icon.png" alt="YouTube Icon"></a>
-        </div>
-        <div class="footer-links">
-            <a href="#">About</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Our Team</a>
-        </div>
-        <div class="footer-copyright">
-            <p>&copy; copyright. All rights reserved</p>
-        </div>
-    </div>
-</footer>
 </html>
