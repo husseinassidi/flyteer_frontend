@@ -1,28 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM fully loaded and parsed");
-
   const loginUrl =
     "http://localhost/grpProject%232/flyteer_backend/api/user/login.php";
   const form = document.querySelector(".login-form");
 
-  if (form) {
-    console.log("Form found");
-  } else {
-    console.log("Form not found");
-  }
-
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     try {
-      console.log(username, password);
+      console.log(email, password);
       const response = await axios.post(
         loginUrl,
         {
-          email: username,
+          email: email,
           password: password,
         },
         {
@@ -42,10 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("jwtToken", token);
 
         if (decodedToken.role === "admin") {
-          alert("Admin login successful");
           window.location.href = "admin/admin.html";
         } else {
-          alert("User login successful");
           window.location.href = "/dashboard";
         }
       } else {
