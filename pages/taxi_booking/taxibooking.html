@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taxi Booking</title>
-    <link rel="stylesheet" href="taxibooking.css">
+    <link rel="stylesheet" href="/styles/taxibooking.css">
 </head>
 <body>
     <header>
         <h2 class="logo">Flyteer</h2>
         <nav class="navigation">
-            <a href="#" onclick="location.href='index.html'" >Home</a>
-            <a href="#">Stays</a>
+            <a href="#" onclick="location.href='../home/index.html'" >Home</a>
+            <a href="#" onclick="location.href='../hotel_booking/hotel_booking_filter.html'">Stays </a>
             <a href="#">Flight</a>
             <a href="#" class="active">Taxis</a>
             <a onclick="signUp()" class="button">Register</a>
@@ -24,16 +24,9 @@
         <section class="deal-section">
             <h2>View deal</h2>
             <div class="deal-content">
-                <img src="Images/taxi-image.png" alt="Taxi Image" class="taxi-image">
+                <img src="/Images/taxi-image.png" alt="Taxi Image" class="taxi-image">
                 <div class="deal-info">
-                    <h3>Nissan Sunny <span class="car-color">white</span></h3>
-                    <p><img src="Images/driver.jpg" alt="User Icon"> Bakri dib</p>
-                    <p><img src="Images/location.png" alt="Location Icon"> From: Beirut</p>
-                    <p><img src="Images/location.png" alt="Destination Icon"> To: Jounieh</p>
-                    <p><img src="Images/company.png" alt="Company Icon"> 4 you taxi</p>
-                    <p><img src="Images/calendar.png" alt="Calendar Icon"> wed, jul 17 at 10:00 AM</p>
-                    <p><img src="Images/price.png" alt="Price Icon"> 20$</p>
-                    <button class="checkout-button" onclick="goToCheckout()">Go to checkout</button>
+                    <!-- Taxi details will be injected here -->
                 </div>
             </div>
         </section>
@@ -43,11 +36,11 @@
         <div class="footer-container">
             <h2 class="footer-logo">Flyteer</h2>
             <div class="footer-icons">
-                <a href="#"><img src="Images/phone-icon.png" alt="Phone Icon"></a>
-                <a href="#"><img src="Images/instagram-icon.jpg" alt="Instagram Icon"></a>
-                <a href="#"><img src="Images/facebook-icon.png" alt="Facebook Icon"></a>
-                <a href="#"><img src="Images/google-icon.jpg" alt="Google Plus Icon"></a>
-                <a href="#"><img src="Images/youtube-icon.png" alt="YouTube Icon"></a>
+                <a href="#"><img src="../../Images/phone-icon.png" alt="Phone Icon"></a>
+                <a href="#"><img src="../../Images/instagram-icon.jpg" alt="Instagram Icon"></a>
+                <a href="#"><img src="../../Images/facebook-icon.png" alt="Facebook Icon"></a>
+                <a href="#"><img src="../../Images/google-icon.jpg" alt="Google Plus Icon"></a>
+                <a href="#"><img src="../../Images/youtube-icon.png" alt="YouTube Icon"></a>
             </div>
             <div class="footer-links">
                 <a href="#">About</a>
@@ -60,10 +53,6 @@
         </div>
     </footer>
 
-    <script>
-        function goToCheckout() {
-            window.location.href = 'checkout.html';
-        }
-    </script>
+    <script src="/scripts/taxi/main.js"></script>
 </body>
 </html>
