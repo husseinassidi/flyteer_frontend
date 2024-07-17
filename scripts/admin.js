@@ -1,4 +1,7 @@
+import auth from "./Auth.js";
+
 document.addEventListener("DOMContentLoaded", async function () {
+  auth();
   const get_companies =
     "http://localhost/grpProject%232/flyteer_backend/api/taxi_company/read.php";
   const post_companies =
@@ -19,22 +22,22 @@ document.addEventListener("DOMContentLoaded", async function () {
   const logoutBtn = document.getElementById("logoutBtn");
 
   let companyToDelete = null;
-  const token = localStorage.getItem("jwtToken");
-  if (token) {
-    const decodedToken = jwt_decode(token);
-    if (decodedToken.role !== "admin") {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "access denied",
-      });
-      window.location.href = "/dashboard";
-      return;
-    }
-  } else {
-    window.location.href = "/pages/login.html";
-    return;
-  }
+  // const token = localStorage.getItem("jwtToken");
+  // if (token) {
+  //   const decodedToken = jwt_decode(token);
+  //   if (decodedToken.role !== "admin") {
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Error",
+  //       text: "access denied",
+  //     });
+  //     window.location.href = "/pages/login.html";
+  //     return;
+  //   }
+  // } else {
+  //   window.location.href = "/pages/login.html";
+  //   return;
+  // }
 
   createBtn.addEventListener("click", () => {
     popupModal.style.display = "block";
