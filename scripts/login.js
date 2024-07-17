@@ -42,10 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("jwtToken", token);
 
         if (decodedToken.role === "admin") {
-          alert("Admin login successful");
           window.location.href = "admin/admin.html";
         } else {
-          alert("User login successful");
           window.location.href = "/dashboard";
         }
       } else {
