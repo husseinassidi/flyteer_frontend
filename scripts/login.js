@@ -6,15 +6,15 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const username = document.getElementById("username").value;
+    const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
 
     try {
-      console.log(username, password);
+      console.log(email, password);
       const response = await axios.post(
         loginUrl,
         {
-          email: username,
+          email: email,
           password: password,
         },
         {
