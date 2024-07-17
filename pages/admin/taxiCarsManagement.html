@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../styles/admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Flyteer Admin Panel</title>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode@3.1.2/build/jwt-decode.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+  </head>
+  <body>
+    <div class="sidebar">
+      <h1>Flyteer Admin Panel</h1>
+      <ul class="container">
+        <li>
+          <a href="admin.html"
+            ><i class="fa-solid fa-taxi"></i> Taxi Management</a
+          >
+        </li>
+        <li>
+          <a href="taxiCarsManagement.html"
+            ><i class="fa-solid fa-car"></i> Taxi Cars Management</a
+          >
+        </li>
+        <li>
+          <a href="airplanes_management.html"
+            ><i class="fa-solid fa-plane"></i> Airplanes Management</a
+          >
+        </li>
+        <li>
+          <a href="airports_management.html"
+            ><i class="fa-solid fa-plane-departure"></i> Airports Management</a
+          >
+        </li>
+        <li>
+          <a href="hotel_management.html"
+            ><i class="fa-solid fa-hotel"></i> Hotel Management</a
+          >
+        </li>
+        <li>
+          <a href="booking_management.html"
+            ><i class="fa-solid fa-book"></i> Booking Management</a
+          >
+        </li>
+        <li>
+          <a href="#" id="logoutBtn"
+            ><i class="fa-solid fa-sign-out-alt"></i> Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div style="padding-left: 20px; width: 100%; padding-right: 20px">
+      <div class="main-content">
+        <h2>Taxi Management</h2>
+        <p class="buttonP">
+          Add a new taxi:
+          <button class="main-btn" id="createBtn">Add here</button>
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Company ID</th>
+              <th>Location</th>
+              <th>Price per KM</th>
+              <th>License</th>
+              <th>Driver Name</th>
+              <th>Color</th>
+              <th>Type</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="popupModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Add New Taxi</h2>
+        <form id="addTaxiForm">
+          <label for="taxiCompany">Company ID:</label>
+          <select
+            id="taxiCompany"
+            name="taxiCompany"
+            required
+            style="width: 200px"
+          ></select
+          ><br />
+          <label for="taxiLocation">Location:</label>
+          <input
+            type="text"
+            id="taxiLocation"
+            name="taxiLocation"
+            required
+          /><br />
+          <label for="pricePerKM">Price per KM:</label>
+          <input type="text" id="pricePerKM" name="pricePerKM" required /><br />
+          <label for="license">License:</label>
+          <input type="text" id="license" name="license" required /><br />
+          <label for="driverName">Driver Name:</label>
+          <input type="text" id="driverName" name="driverName" required /><br />
+          <label for="color">Color:</label>
+          <input type="text" id="color" name="color" required /><br />
+          <label for="type">Type:</label>
+          <input type="text" id="type" name="type" required /><br />
+          <div class="modalBtn">
+            <button type="submit" class="main-btn modalBtn">Add Taxi</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+      <div class="modal-content">
+        <h2>Confirm Deletion</h2>
+        <p id="deleteMessage"></p>
+        <div class="modalBtn deletionModal">
+          <button id="cancelDeleteBtn" class="main-btn">Cancel</button>
+          <button id="confirmDeleteBtn" class="main-btn">Yes, Delete</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="updateModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Update Taxi</h2>
+        <form id="updateTaxiForm">
+          <input type="hidden" id="updateTaxiId" name="taxiId" />
+          <label for="updateTaxiCompany">Company ID:</label>
+          <select id="updateTaxiCompany" name="taxiCompany" required></select
+          ><br />
+          <label for="updateTaxiLocation">Location:</label>
+          <input
+            type="text"
+            id="updateTaxiLocation"
+            name="taxiLocation"
+            required
+          /><br />
+          <label for="updatePricePerKM">Price per KM:</label>
+          <input
+            type="text"
+            id="updatePricePerKM"
+            name="pricePerKM"
+            required
+          /><br />
+          <label for="updateLicense">License:</label>
+          <input type="text" id="updateLicense" name="license" required /><br />
+          <label for="updateDriverName">Driver Name:</label>
+          <input
+            type="text"
+            id="updateDriverName"
+            name="driverName"
+            required
+          /><br />
+          <label for="updateColor">Color:</label>
+          <input type="text" id="updateColor" name="color" required /><br />
+          <label for="updateType">Type:</label>
+          <input type="text" id="updateType" name="type" required /><br />
+          <div class="modalBtn">
+            <button type="submit" class="main-btn modalBtn">Update Taxi</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("#taxiCompany").select2();
+        $("#updateTaxiCompany").select2();
+      });
+    </script>
+
+    <script src="../../scripts/taxiManagement.js"></script>
+  </body>
+</html>
