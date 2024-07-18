@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../styles/style.css">
+    <link rel="stylesheet" href="../../styles/dealhotel.css">
     <script  type='module' src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <title>Book a stay</title>
@@ -15,16 +15,17 @@
             <a href="#"  onclick="location.href='../home/index.html'">Home</a>
             <a href="#" class="active">Stays</a>
             <a href="#">Flight</a>
-            <a href="#" >Taxis</a>
+            <a href="#" onclick="location.href='../taxi/taxi.html'">Taxis</a>
             <a  onclick="signUp()" class="button">Register</a>
             <a  onclick="signIn()" class="button">Sign in</a>
         </nav>   
         <div class="menu-toggle" onclick="toggleMenu()"></div>
     </header>
-
+    
 
     <main>
-        <h1>Book a Hotel Say</h1>
+        <h1 class="text">Book a Hotel Say</h1>
+        
         <div id="hotel_stay_card">  </div>
 
 
