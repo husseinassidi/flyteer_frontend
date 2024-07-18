@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flights Main Page</title>
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <header>
+        <h2 class="logo">Flyteer</h2>
+        <nav class="navigation">
+            <a href="#">Home</a>
+            <a href="#">Stays</a>
+            <a href="#" class="active">Flight</a>
+            <a href="#">Taxis</a>
+            <a onclick="signUp()" class="button">Register</a>
+            <a onclick="signIn()" class="button">Sign in</a>
+        </nav>   
+        <div class="menu-toggle" onclick="toggleMenu()"></div>
+    </header>
+
+    <main>
+        <section class="filter-section">
+            <div class="filter-box">
+                <input type="text" id="from" placeholder="Departure Airport">
+                <input type="text" id="to" placeholder="Arrival Airport">
+                <input type="date" id="date">
+                <div class="price-input">
+                    <label for="price">Max Price:</label>
+                    <input type="number" id="price" name="price" min="0" step="50" placeholder="Enter max price">
+                </div>
+                <button id="filter-button" class="filter-button">Filter</button>
+            </div>
+        </section>
+
+        <section class="results-section">
+            <div class="results-container" id="results-container">
+                <!-- Flights will be displayed here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <h2 class="footer-logo">Flyteer</h2>
+            <div class="footer-icons">
+                <a href="#"><img src="/flyteer_frontend/Images/phone-icon.png" alt="Phone Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/instagram-icon.jpg" alt="Instagram Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/facebook-icon.png" alt="Facebook Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/google-icon.jpg" alt="Google Plus Icon"></a>
+                <a href="#"><img src="/flyteer_frontend/Images/youtube-icon.png" alt="YouTube Icon"></a>
+            </div>
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact Us</a>
+                <a href="#">Our Team</a>
+            </div>
+            <div class="footer-copyright">
+                <p>&copy; copyright. All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module">
+        const API_FLIGHTS_URL = 'http://localhost/FlyteerBackend/flyteer_backend/api/flight/read.php';
+        const API_AIRPORTS_URL = 'http://localhost/FlyteerBackend/flyteer_backend/api/airport/getAirports.php';
+        const API_BOOKING_URL = 'http://localhost/FlyteerBackend/flyteer_backend/api/booking/flight/create.php';
+
+        const fetchFlights = () => {
+            return axios.get(API_FLIGHTS_URL)
+                .then(response => {
+                    console.log('Flights Data:', response.data); // Log the flight data
+                    return response.data;
+                })
+                .catch(error => {
+                    console.error('Error fetching flight data:', error);
+                    return [];
+                });
+        };
+
+        const fetchAirports = () => {
+            return axios.get(API_AIRPORTS_URL)
+                .then(response => {
+                    console.log('Airports Data:', response.data); // Log the airport data
+                    return response.data;
+                })
+                .catch(error => {
+                    console.error('Error fetching airport data:', error);
+                    return [];
+                });
+        };
+
+        const mapAirports = (airports) => {
+            const airportMap = {};
+            airports.forEach(airport => {
+                airportMap[airport.airport_id] = airport.name;
+            });
+            console.log('Airport Map:', airportMap); // Log the airport map for debugging
+            return airportMap;
+        };
+
+        const displayFlights = (flights, airportMap) => {
+            const resultsContainer = document.getElementById('results-container');
+            resultsContainer.innerHTML = ''; // Clear any existing results
+
+            if (flights.length === 0) {
+                resultsContainer.innerHTML = '<p>No flights found.</p>';
+                return;
+            }
+
+            flights.forEach(flight => {
+                console.log('Flight Data:', flight); // Log each flight data for debugging
+                const departureAirport = airportMap[flight.departure_airport] || 'N/A';
+                const arrivalAirport = airportMap[flight.arrival_airport] || 'N/A';
+                const departureTime = flight.departure_time ? new Date(flight.departure_time).toLocaleString() : 'N/A';
+                const arrivalTime = flight.arrival_time ? new Date(flight.arrival_time).toLocaleString() : 'N/A';
+                
+                const flightElement = document.createElement('div');
+                flightElement.classList.add('flight');
+                flightElement.innerHTML = `
+                    <h3>${flight.airline} (${flight.flight_number})</h3>
+                    <p>From: ${departureAirport}</p>
+                    <p>To: ${arrivalAirport}</p>
+                    <p>Departure: ${departureTime}</p>
+                    <p>Arrival: ${arrivalTime}</p>
+                    <p>Price: $${flight.price}</p>
+                    <button class="book-button" onclick="window.bookFlight(${flight.flight_id})">Book Flight</button>
+                `;
+                resultsContainer.appendChild(flightElement);
+            });
+        };
+
+        const filterFlights = async () => {
+            const from = document.getElementById('from').value.toLowerCase();
+            const to = document.getElementById('to').value.toLowerCase();
+            const date = document.getElementById('date').value;
+            const price = document.getElementById('price').value;
+
+            try {
+                const airports = await fetchAirports();
+                const airportMap = mapAirports(airports);
+                const airportNamesToIds = Object.keys(airportMap).reduce((acc, key) => {
+                    acc[airportMap[key].toLowerCase()] = key;
+                    return acc;
+                }, {});
+
+                const flights = await fetchFlights();
+
+                const filteredFlights = flights.filter(flight => {
+                    const flightFrom = airportMap[flight.departure_airport].toLowerCase();
+                    const flightTo = airportMap[flight.arrival_airport].toLowerCase();
+                    const flightDate = new Date(flight.departure_time).toISOString().split('T')[0];
+                    return (!from || flightFrom.includes(from)) &&
+                           (!to || flightTo.includes(to)) &&
+                           (!date || flightDate === date) &&
+                           (!price || flight.price <= parseInt(price));
+                });
+
+                displayFlights(filteredFlights, airportMap);
+            } catch (error) {
+                console.error('Error in filterFlights:', error);
+            }
+        };
+
+        const bookFlight = async (flightId) => {
+            const userId = 1; // Assuming the user ID is known and is 1 for this example
+            try {
+                const response = await axios.post(API_BOOKING_URL, {
+                    user_id: userId,
+                    flight_id: flightId
+                });
+
+                if (response.status === 201) {
+                    alert('Flight booked successfully!');
+                } else {
+                    alert('Failed to book the flight.');
+                }
+            } catch (error) {
+                console.error('Error booking the flight:', error);
+                alert('An error occurred while booking the flight.');
+            }
+        };
+
+        // Attach the bookFlight function to the window object
+        window.bookFlight = bookFlight;
+
+        document.getElementById('filter-button').addEventListener('click', filterFlights);
+    </script>
+</body>
+</html>
